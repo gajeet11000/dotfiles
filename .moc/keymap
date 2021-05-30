@@ -1,0 +1,8 @@
+go    = ENTER RIGHT
+go_up = U BACKSPACE
+toggle_menu = TAB \
+quit = DEL 
+#quit = Q
+#toggle_menu = TAB
+#seek_forward  = RIGHT
+#seek_backward = LEFT
