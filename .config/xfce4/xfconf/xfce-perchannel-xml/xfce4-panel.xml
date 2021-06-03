@@ -40,6 +40,8 @@
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="safeeyes"/>
         <value type="string" value="javaembeddedframe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="xfce terminal"/>
@@ -70,7 +72,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance17137;firefox.instance5337"/>
+      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance17137;firefox.instance5337"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-1" type="string" value="netload"/>
