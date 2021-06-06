@@ -40,6 +40,7 @@
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="deluge"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="safeeyes"/>
         <value type="string" value="javaembeddedframe"/>
@@ -50,6 +51,8 @@
         <value type="string" value="clipman"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="TeamViewer"/>
+        <value type="string" value="TelegramDesktop"/>
         <value type="string" value="safeeyes_2"/>
         <value type="string" value="redshift"/>
         <value type="string" value="MSM Notifier"/>
@@ -72,7 +75,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance17137;firefox.instance5337"/>
+      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance1213;firefox.instance1279;firefox.instance17137;firefox.instance5337"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-1" type="string" value="netload"/>

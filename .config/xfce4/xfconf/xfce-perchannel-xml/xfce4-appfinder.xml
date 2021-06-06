@@ -14,6 +14,7 @@
     <value type="int" value="1"/>
     <value type="int" value="6"/>
     <value type="int" value="7"/>
+    <value type="int" value="8"/>
     <property name="action-5" type="empty">
       <property name="type" type="int" value="0"/>
       <property name="pattern" type="string" value="soft"/>
@@ -51,6 +52,11 @@
     <property name="action-7" type="empty">
       <property name="pattern" type="string" value="pll"/>
       <property name="command" type="string" value="qpdfview /mnt/Ajeet/PDF\ BOOKS/Cube\ Solving/pll-algorithms.pdf"/>
+      <property name="save" type="bool" value="true"/>
+    </property>
+    <property name="action-8" type="empty">
+      <property name="pattern" type="string" value="wall"/>
+      <property name="command" type="string" value="exo-open --launch FileManager /mnt/Ajeet/PHOTOS/Wallpapers/"/>
       <property name="save" type="bool" value="true"/>
     </property>
   </property>
