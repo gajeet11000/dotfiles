@@ -3,7 +3,6 @@ alias c="clear"
 alias aq="asciiquarium"
 alias cm="cmatrix"
 alias cs="fortune | cowsay | lolcat"
-alias songs="mocp"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
