@@ -39,7 +39,7 @@ set background=light
 colorscheme one
 set guifont=Cascadia\ Code\ Bold\ 16
 set shell=/usr/bin/bash
-cd /home/gajeet/Documents/Coding
+cd /home/gajeet/Documents/Apna-College-DSA-Practice-Questions/
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 nnoremap <C-A> ggVG
