@@ -524,7 +524,7 @@ Keymap = keymap
 #             ExecCommand2 = "/home/joe/now_playing %I"
 #
 #ExecCommand1 =
-ExecCommand2 = "moc-lyrics"
+#ExecCommand2 = "moc-lyrics"
 #ExecCommand3 =
 #ExecCommand4 =
 #ExecCommand5 =

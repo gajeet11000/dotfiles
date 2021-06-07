@@ -1,5 +1,5 @@
 #EXTM3U
-#MOCSERIAL: 256
+#MOCSERIAL: 1024
 #EXTINF:277,9 Taylor Swift - Mr. Perfectly Fine (From The Vault) (Fearless (Taylor's Version))
 /mnt/Ajeet/SONGS/Taylor Swift/10. Taylor Swift - Fearless (Taylor's Version) (2021)/CD2/09 - Mr. Perfectly Fine (From The Vault).mp3
 #EXTINF:235,3 Taylor Swift - Love Story (Taylor's Version) (Fearless (Taylor's Version))
@@ -78,3 +78,5 @@
 /mnt/Ajeet/SONGS/Taylor Swift/4. Taylor Swift - Red (2012)/6. 22.mp3
 #EXTINF:329,5 Taylor Swift - All Too Well (Red (Deluxe Version))
 /mnt/Ajeet/SONGS/Taylor Swift/4. Taylor Swift - Red (2012)/5. All Too Well.mp3
+#EXTINF:203,1 Imagine Dragons - Believer (Believer - Single)
+/mnt/Ajeet/SONGS/Others/01 Believer.mp3
