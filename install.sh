@@ -23,3 +23,7 @@ fisher install IlanCosman/tide
 cd /home/gajeet/Documents/
 
 git clone https://github.com/gajeet11000/Apna-College-DSA-Practice-Questions.git
+
+sudo mount /dev/sda4 /mnt/Ajeet/
+
+sudo sh /mnt/Ajeet/SOFTWARE/Linux\ Softwares/xdm-setup-7.2.11/install.sh
