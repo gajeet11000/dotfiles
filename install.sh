@@ -11,7 +11,7 @@ pamac build gammy
 
 sudo pacman -S --noconfirm firefox gimp telegram-desktop mpv pamac-flatpak-plugin pamac-snap-plugin xfce4-netload-plugin rofi gvim gcc gnome-disk-utility mintstick moc cowsay fortune-mod cmatrix lolcat otf-cascadia-code deluge-gtk xorg-xbacklight gnome-calculator asciiquarium jre-openjdk jre-openjdk-headless fish nomacs xournalpp bitwarden pinta lsd
 
-cp -r .config/ .fonts/ .icons/ .moc/ .themes/ .vim/ .xdman .gvimrc .vimrc .bashrc ~/
+cp -r .config/ .fonts/ .icons/ .moc/ .themes/ .vim/ .local/ .xdman .gvimrc .vimrc .bashrc ~/
 
 sudo pacman -R --noconfirm blueman midori parole mousepad
 
