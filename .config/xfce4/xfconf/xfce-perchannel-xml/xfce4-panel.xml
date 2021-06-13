@@ -51,6 +51,8 @@
         <value type="string" value="clipman"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="MEGAsync"/>
+        <value type="string" value="fluxgui-indicator"/>
         <value type="string" value="gammy"/>
         <value type="string" value="TeamViewer"/>
         <value type="string" value="TelegramDesktop"/>
@@ -76,7 +78,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance1213;firefox.instance1232;firefox.instance1279;firefox.instance1397;firefox.instance17137;firefox.instance2227;firefox.instance22559;firefox.instance5337"/>
+      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance1174;firefox.instance1188;firefox.instance1213;firefox.instance1232;firefox.instance1279;firefox.instance1319;firefox.instance1397;firefox.instance1411;firefox.instance1423;firefox.instance17137;firefox.instance1737;firefox.instance1894;firefox.instance20270;firefox.instance2227;firefox.instance22559;firefox.instance2578;firefox.instance2955;firefox.instance5337;firefox.instance86320;firefox.instance9311"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-1" type="string" value="netload"/>
