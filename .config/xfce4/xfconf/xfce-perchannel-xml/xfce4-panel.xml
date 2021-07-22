@@ -51,6 +51,7 @@
         <value type="string" value="clipman"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="deluge"/>
         <value type="string" value="MEGAsync"/>
         <value type="string" value="fluxgui-indicator"/>
         <value type="string" value="gammy"/>
@@ -78,7 +79,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance1146;firefox.instance1174;firefox.instance1188;firefox.instance1213;firefox.instance1232;firefox.instance1279;firefox.instance1319;firefox.instance1397;firefox.instance1411;firefox.instance1423;firefox.instance17137;firefox.instance1737;firefox.instance1894;firefox.instance20270;firefox.instance2227;firefox.instance22559;firefox.instance2578;firefox.instance2955;firefox.instance5337;firefox.instance86320;firefox.instance9311"/>
+      <property name="mpris-players" type="string" value="firefox.instance10013;firefox.instance10920;firefox.instance1094;firefox.instance11076;firefox.instance1135;firefox.instance1145;firefox.instance1146;firefox.instance1151;firefox.instance1152;firefox.instance1154;firefox.instance11579;firefox.instance1162;firefox.instance1174;firefox.instance1177;firefox.instance1179;firefox.instance1188;firefox.instance11899;firefox.instance1192;firefox.instance1197;firefox.instance1200;firefox.instance1201;firefox.instance1209;firefox.instance1213;firefox.instance1232;firefox.instance1233;firefox.instance12341;firefox.instance1247;firefox.instance1251;firefox.instance1256;firefox.instance1263;firefox.instance1269;firefox.instance1275;firefox.instance1279;firefox.instance1286;firefox.instance1287;firefox.instance1296;firefox.instance1314;firefox.instance1316;firefox.instance1319;firefox.instance1342;firefox.instance1343;firefox.instance1355;firefox.instance1363;firefox.instance1386;firefox.instance1387;firefox.instance1390;firefox.instance1397;firefox.instance1401;firefox.instance1410;firefox.instance1411;firefox.instance1417;firefox.instance1420;firefox.instance1423;firefox.instance1430;firefox.instance1471;firefox.instance1476;firefox.instance1482;firefox.instance1487;firefox.instance1490;firefox.instance1493;firefox.instance1499;firefox.instance1556;firefox.instance1569;firefox.instance1622;firefox.instance1637;firefox.instance1654;firefox.instance16828;firefox.instance17137;firefox.instance1737;firefox.instance1753;firefox.instance1835;firefox.instance1865;firefox.instance1894;firefox.instance18995;firefox.instance2003;firefox.instance20270;firefox.instance2105;firefox.instance2227;firefox.instance2241;firefox.instance22559;firefox.instance2341;firefox.instance2501;firefox.instance2578;firefox.instance2641;firefox.instance2804;firefox.instance2955;firefox.instance31406;firefox.instance3234;firefox.instance3299;firefox.instance3356;firefox.instance5337;firefox.instance5650;firefox.instance5779;firefox.instance86320;firefox.instance9311"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-1" type="string" value="netload"/>
