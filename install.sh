@@ -7,7 +7,7 @@ sudo pacman -S --noconfirm base-devel
 pamac build safeeyes
 pamac build teamviewer
 pamac build fisher 
-pamac build gammy
+pamac build gammy postman-bin heroku-cli
 
 sudo pacman -S --noconfirm firefox gimp telegram-desktop mpv pamac-flatpak-plugin pamac-cli pamac-gtk pamac-snap-plugin xfce4-netload-plugin rofi gvim gcc gnome-disk-utility mintstick moc cowsay fortune-mod cmatrix lolcat otf-cascadia-code deluge-gtk xorg-xbacklight gnome-calculator asciiquarium jre-openjdk jre-openjdk-headless fish nomacs xournalpp bitwarden pinta lsd
 
