@@ -102,7 +102,7 @@ StartInMusicDir = yes
 #                     be doubled (i.e., '\\').  (See zshmisc
 #                     documentation for more information.)
 #
-#FormatString = "%(n:%n :)%(a:%a - :)%(t:%t:)%(A: \(%A\):)"
+FormatString = "%(n:%n :)%(t:%t:)"
 
 # Input and output buffer sizes (in kilobytes).
 #InputBuffer = 512                  # Minimum value is 32KB

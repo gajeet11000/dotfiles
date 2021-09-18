@@ -22,6 +22,12 @@
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="icon-size" type="uint" value="24"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.870588"/>
+        <value type="double" value="0.866667"/>
+        <value type="double" value="0.854902"/>
+        <value type="double" value="1.000000"/>
+      </property>
     </property>
     <property name="dark-mode" type="bool" value="false"/>
   </property>
@@ -41,8 +47,6 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
         <value type="string" value="deluge"/>
-        <value type="string" value="redshift-gtk"/>
-        <value type="string" value="safeeyes"/>
         <value type="string" value="javaembeddedframe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="xfce terminal"/>
@@ -51,19 +55,15 @@
         <value type="string" value="clipman"/>
       </property>
       <property name="known-items" type="array">
-        <value type="string" value="deluge"/>
-        <value type="string" value="MEGAsync"/>
-        <value type="string" value="fluxgui-indicator"/>
-        <value type="string" value="gammy"/>
-        <value type="string" value="TeamViewer"/>
         <value type="string" value="TelegramDesktop"/>
         <value type="string" value="safeeyes_2"/>
-        <value type="string" value="redshift"/>
+        <value type="string" value="gammy"/>
         <value type="string" value="MSM Notifier"/>
       </property>
       <property name="icon-size" type="int" value="24"/>
       <property name="single-row" type="bool" value="true"/>
       <property name="square-icons" type="bool" value="true"/>
+      <property name="menu-is-primary" type="bool" value="false"/>
     </property>
     <property name="plugin-3" type="string" value="tasklist">
       <property name="grouping" type="uint" value="0"/>
@@ -71,7 +71,6 @@
       <property name="show-handle" type="bool" value="false"/>
       <property name="sort-order" type="uint" value="4"/>
       <property name="middle-click" type="uint" value="1"/>
-      <property name="window-scrolling" type="bool" value="false"/>
     </property>
     <property name="plugin-7" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -79,9 +78,12 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance10013;firefox.instance10920;firefox.instance1094;firefox.instance11076;firefox.instance1135;firefox.instance1145;firefox.instance1146;firefox.instance1151;firefox.instance1152;firefox.instance1154;firefox.instance11579;firefox.instance1162;firefox.instance1174;firefox.instance1177;firefox.instance1179;firefox.instance1188;firefox.instance11899;firefox.instance1192;firefox.instance1197;firefox.instance1200;firefox.instance1201;firefox.instance1209;firefox.instance1213;firefox.instance1232;firefox.instance1233;firefox.instance12341;firefox.instance1247;firefox.instance1251;firefox.instance1256;firefox.instance1263;firefox.instance1269;firefox.instance1275;firefox.instance1279;firefox.instance1286;firefox.instance1287;firefox.instance1296;firefox.instance1314;firefox.instance1316;firefox.instance1319;firefox.instance1342;firefox.instance1343;firefox.instance1355;firefox.instance1363;firefox.instance1386;firefox.instance1387;firefox.instance1390;firefox.instance1397;firefox.instance1401;firefox.instance1410;firefox.instance1411;firefox.instance1417;firefox.instance1420;firefox.instance1423;firefox.instance1430;firefox.instance1471;firefox.instance1476;firefox.instance1482;firefox.instance1487;firefox.instance1490;firefox.instance1493;firefox.instance1499;firefox.instance1556;firefox.instance1569;firefox.instance1622;firefox.instance1637;firefox.instance1654;firefox.instance16828;firefox.instance17137;firefox.instance1737;firefox.instance1753;firefox.instance1835;firefox.instance1865;firefox.instance1894;firefox.instance18995;firefox.instance2003;firefox.instance20270;firefox.instance2105;firefox.instance2227;firefox.instance2241;firefox.instance22559;firefox.instance2341;firefox.instance2501;firefox.instance2578;firefox.instance2641;firefox.instance2804;firefox.instance2955;firefox.instance31406;firefox.instance3234;firefox.instance3299;firefox.instance3356;firefox.instance5337;firefox.instance5650;firefox.instance5779;firefox.instance86320;firefox.instance9311"/>
+      <property name="mpris-players" type="string" value="firefox.instance1042;firefox.instance1057;firefox.instance1062;firefox.instance1064;firefox.instance1069;firefox.instance1070;firefox.instance1080;firefox.instance1085;firefox.instance1086;firefox.instance1087;firefox.instance1092;firefox.instance1093;firefox.instance1126;firefox.instance1130;firefox.instance1132;firefox.instance1145;firefox.instance1149;firefox.instance1156;firefox.instance1186;firefox.instance1193;firefox.instance1273;firefox.instance1274;firefox.instance1306;firefox.instance1423;firefox.instance1430;firefox.instance1458;firefox.instance1630;firefox.instance17102;firefox.instance1995;firefox.instance2499;firefox.instance2592;firefox.instance3583;firefox.instance3908;firefox.instance4300;firefox.instance4828;firefox.instance6158"/>
     </property>
-    <property name="plugin-5" type="string" value="clock"/>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="timezone" type="string" value="Asia/Kolkata"/>
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+    </property>
     <property name="plugin-1" type="string" value="netload"/>
   </property>
   <property name="configver" type="int" value="2"/>

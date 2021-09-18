@@ -3,8 +3,8 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="Dracula-alt-style"/>
-    <property name="IconThemeName" type="string" value="Papirus-Maia"/>
-    <property name="DoubleClickTime" type="int" value="532"/>
+    <property name="IconThemeName" type="string" value="Papirus-Dark-Maia"/>
+    <property name="DoubleClickTime" type="int" value="502"/>
     <property name="DoubleClickDistance" type="int" value="8"/>
     <property name="DndDragThreshold" type="int" value="8"/>
     <property name="CursorBlink" type="bool" value="true"/>
@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="false"/>
     <property name="ColorPalette" type="string" value="black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90"/>
-    <property name="FontName" type="string" value="Comic Sans MS Bold 12"/>
-    <property name="MonospaceFontName" type="string" value="Comic Sans MS Bold 12"/>
+    <property name="FontName" type="string" value="Ubuntu Bold 10"/>
+    <property name="MonospaceFontName" type="string" value="Ubuntu Bold 10"/>
     <property name="IconSizes" type="string" value=""/>
     <property name="KeyThemeName" type="string" value=""/>
     <property name="ToolbarStyle" type="string" value="icons"/>
