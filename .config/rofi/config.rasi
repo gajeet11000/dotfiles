@@ -1,6 +1,5 @@
 configuration
 {
-	columns: 2;
 	modi: "run,drun,window";
 	font: "Comic Sans MS Bold 14";
 	show-icons: true;
@@ -8,9 +7,4 @@ configuration
 	drun-display-format: "{name}";
 	display-drun: "Run ▶ ";
 }
-
-element-icon
-{
-	size: 2.5ch ; 
-}
-@import "/home/gajeet/.config/rofi/themes/aj-dmenu.rasi"
+@theme "/home/gajeet/.config/rofi/themes/aj-dmenu.rasi"

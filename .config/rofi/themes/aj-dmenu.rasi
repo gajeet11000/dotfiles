@@ -6,7 +6,8 @@
  */
 
 * {
-    background-color:           rgba ( 0, 0, 0, 90 % );
+    background-color:           rgba ( 0, 0, 0, 0 % );
+    background:                 rgba ( 0, 0, 0, 90 % );
     border-color:               #268bd2;
     text-color:                 #D3FD92;
     height:                     26px;
@@ -19,6 +20,7 @@
     selected-normal-foreground: #D3FD92;
 }
 #window {
+    background-color: @background;
     anchor: north;
     location: north;
     width: 100%;
@@ -47,7 +49,11 @@
 #element {
     padding: 2px 8px;
 }
-#element selected {
+element selected.normal {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
+}
+
+element-icon {
+    size: 2.5ch;
 }

@@ -25,24 +25,26 @@
     blue: #268bd2;
     cyan: #2aa198;
     green: #859900;
+    columns: 2;
 
     /* Solarized Darker Theme */
     transparent-background: rgba ( 0, 0, 0, 0 % );
     foreground:                  @magenta;
     background:                  rgba ( 0, 0, 0, 90 % );
 
-    normal-foreground:           @foreground;
+    normal-foreground:           @magenta;
     normal-background:           @transparent-background;
     active-foreground:           @green;
     active-background:           @transparent-background;
     urgent-foreground:           @red;
     urgent-background:           @transparent-background;
+    text-color:                  @magenta;
 
     selected-normal-foreground:  @magenta;
     selected-normal-background:  @base02;
-    selected-active-foreground:  @green;
+    selected-active-foreground:  @magenta;
     selected-active-background:  @base02;
-    selected-urgent-foreground:  @red;
+    selected-urgent-foreground:  @magenta;
     selected-urgent-background:  @base02;
 
     alternate-normal-foreground: @foreground;
@@ -87,6 +89,9 @@ listview {
 element {
     border:  0;
     padding: 1px 0px 1px 1px;
+}
+element-icon {
+    size: 2.5ch;
 }
 element normal.normal {
     background-color: @normal-background;
