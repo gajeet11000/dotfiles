@@ -1,13 +1,10 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
+Version=1.0
 Type=Application
 Name=Skippy-xd daemon
-Comment=List all windows
+Comment=
 Exec=skippy-xd --start-daemon
-OnlyShowIn=XFCE;
-RunHook=0
-StartupNotify=false
+Icon=
+Path=
 Terminal=false
-Hidden=false
-
+StartupNotify=false
