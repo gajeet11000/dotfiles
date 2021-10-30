@@ -1,4 +1,3 @@
-"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 source $VIMRUNTIME/defaults.vim
 
 
@@ -39,7 +38,6 @@ set background=light
 colorscheme one
 set guifont=Cascadia\ Code\ Bold\ 16
 set shell=/usr/bin/bash
-cd /home/gajeet/Documents/Apna-College-DSA-Practice-Questions/
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 nnoremap <C-A> ggVG
