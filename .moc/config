@@ -524,14 +524,14 @@ Keymap = keymap
 #             ExecCommand2 = "/home/joe/now_playing %I"
 #
 #ExecCommand1 =
-#ExecCommand2 = "moc-lyrics"
+#ExecCommand2 = 
 #ExecCommand3 =
 #ExecCommand4 =
 #ExecCommand5 =
 #ExecCommand6 =
 #ExecCommand7 =
 #ExecCommand8 =
-#ExecCommand9 =
+ExecCommand9 = "xfce4-terminal --title Lyrics --geometry 75x25+400+150 -H -x clyrics -m"
 #ExecCommand10 =
 
 # Display the cursor in the line with the selected file.  Some braille
