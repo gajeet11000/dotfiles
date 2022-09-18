@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Encoding=UTF-8
+Exec=google-chrome-stable https://github.com/gajeet11000/
+GenericName[en_US]=
+GenericName=
+Icon=io.github.shiftey.Desktop
+MimeType=
+Name[en_US]=GitHub
+Name=GitHub
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

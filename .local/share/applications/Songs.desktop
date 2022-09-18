@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Encoding=UTF-8
+Exec=dolphin /mnt/Ajeet/SONGS/
+GenericName[en_US]=
+GenericName=
+Icon=papirus-folders-gui
+MimeType=
+Name[en_US]=Songs
+Name=Songs
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

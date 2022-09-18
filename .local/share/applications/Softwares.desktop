@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Encoding=UTF-8
+Exec=dolphin /mnt/Ajeet/SOFTWARE/
+GenericName[en_US]=
+GenericName=
+MimeType=
+Name[en_US]=Softwares
+Name=Softwares
+Path=
+StartupNotify=true
+Icon=papirus-folders-gui
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
