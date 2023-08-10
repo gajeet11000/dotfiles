@@ -18,7 +18,6 @@ libreoffice-still
 xournalpp
 deluge-gtk
 discord
-jupyter-notebook
 gnome-calculator
 kclock
 nodejs
