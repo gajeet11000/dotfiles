@@ -1,6 +1,6 @@
 configuration
 {
-	modi: "run,drun,window";
+	modi: "drun,run,window";
 	font: "Comic Sans MS Bold 14";
 	show-icons: true;
 	icon-theme: "candy-icons";
@@ -13,4 +13,4 @@ configuration
 	me-accept-entry: [ MousePrimary ];
 
 }
-@theme "/home/gajeet/.config/rofi/themes/aj-dmenu.rasi"
+@theme "~/.config/rofi/themes/aj-dmenu.rasi"

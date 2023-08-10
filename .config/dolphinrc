@@ -1,0 +1,31 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
+[General]
+EditableUrl=true
+FilterBar=true
+RememberOpenedTabs=false
+ShowFullPath=true
+Version=202
+ViewPropsTimestamp=2023,7,25,2,16,7.497
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+1920x1080 screen: Height=486
+1920x1080 screen: Width=479
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=comicbookthumbnail,ebookthumbnail,exrthumbnail,audiothumbnail,cursorthumbnail,svgthumbnail,windowsimagethumbnail,kraorathumbnail,jpegthumbnail,imagethumbnail,windowsexethumbnail,opendocumentthumbnail,appimagethumbnail,djvuthumbnail,fontthumbnail,rawthumbnail,gsthumbnail,mobithumbnail,ffmpegthumbs,blenderthumbnail,directorythumbnail
+
+[kuick-copy]
+Paths[$e]=/mnt/Ajeet

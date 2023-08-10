@@ -10,7 +10,7 @@
     background:                 rgba ( 0, 0, 0, 90 % );
     border-color:               #268bd2;
     text-color:                 #D3FD92;
-    height:                     26 px;
+    height:                     30px;
     font:                       "Comic Sans MS Bold 11";
     prompt-font:                "Comic Sans MS Bold 11";
     prompt-background:          rgba ( 0, 0, 0, 90 % );
