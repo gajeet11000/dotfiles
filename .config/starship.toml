@@ -1,132 +1,216 @@
-format = """
-[ ](bold white)$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status$docker_context$package$golang$helm$java$cmake$julia$kotlin$lua$nim$nodejs$python$ruby$rust$swift$terraform$aws$gcloud$azure $battery
-[ ❯ ](bold green)"""
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
 
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[directory]
-read_only = " "
-truncation_length = 7
-truncation_symbol = "…/"
-
-[hostname]
-ssh_only = false
-format = '[$hostname]($style) '
-style = "blue bold"
-trim_at = "."
-disabled = false
-
-[username]
-style_user = "blue bold"
-style_root = "red bold"
-format = "[$user]($style) "
-disabled = false
-show_always = true
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[git_branch]
-symbol = " "
+[git_commit]
+tag_symbol = " tag "
 
 [git_status]
-ahead = "⇡🏎💨${count}"
-diverged = "⇕⇡😵${ahead_count}⇣${behind_count}"
-behind = "⇣😰${count}"
-conflicted = "🏳 "
-untracked = "🤷"
-stashed = "📦"
-modified = "📝"
-staged = '[++\($count\)](green)'
-renamed = "👅"
-deleted ="🗑 "
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[aws]
+symbol = "aws "
+
+[azure]
+symbol = "az "
+
+[bun]
+symbol = "bun "
+
+[c]
+symbol = "C "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[crystal]
+symbol = "cr "
+
+[cmake]
+symbol = "cmake "
+
+[daml]
+symbol = "daml "
+
+[dart]
+symbol = "dart "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+[directory]
+read_only = " ro"
+
+[docker_context]
+symbol = "docker "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[fennel]
+symbol = "fnl "
+
+[fossil_branch]
+symbol = "fossil "
+
+[gcloud]
+symbol = "gcp "
+
+[git_branch]
+symbol = "git "
 
 [golang]
-symbol = " "
+symbol = "go "
 
-[haskell]
-symbol = " "
+[gradle]
+symbol = "gradle "
+
+[guix_shell]
+symbol = "guix "
 
 [hg_branch]
-symbol = " "
+symbol = "hg "
 
 [java]
-symbol = " "
+symbol = "java "
 
 [julia]
-symbol = " "
+symbol = "jl "
+
+[kotlin]
+symbol = "kt "
 
 [lua]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[meson]
-symbol = "喝 "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
+symbol = "lua "
 
 [nodejs]
-symbol = " "
+symbol = "nodejs "
+
+[memory_usage]
+symbol = "memory "
+
+[meson]
+symbol = "meson "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[opa]
+symbol = "opa "
+
+[os.symbols]
+Alpaquita = "alq "
+Alpine = "alp "
+Amazon = "amz "
+Android = "andr "
+Arch = "rch "
+Artix = "atx "
+CentOS = "cent "
+Debian = "deb "
+DragonFly = "dfbsd "
+Emscripten = "emsc "
+EndeavourOS = "ndev "
+Fedora = "fed "
+FreeBSD = "fbsd "
+Garuda = "garu "
+Gentoo = "gent "
+HardenedBSD = "hbsd "
+Illumos = "lum "
+Linux = "lnx "
+Mabox = "mbox "
+Macos = "mac "
+Manjaro = "mjo "
+Mariner = "mrn "
+MidnightBSD = "mid "
+Mint = "mint "
+NetBSD = "nbsd "
+NixOS = "nix "
+OpenBSD = "obsd "
+OpenCloudOS = "ocos "
+openEuler = "oeul "
+openSUSE = "osuse "
+OracleLinux = "orac "
+Pop = "pop "
+Raspbian = "rasp "
+Redhat = "rhl "
+RedHatEnterprise = "rhel "
+Redox = "redox "
+Solus = "sol "
+SUSE = "suse "
+Ubuntu = "ubnt "
+Unknown = "unk "
+Windows = "win "
 
 [package]
-symbol = " "
+symbol = "pkg "
+
+[perl]
+symbol = "pl "
+
+[php]
+symbol = "php "
+
+[pijul_channel]
+symbol = "pijul "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
 
 [python]
-symbol = " "
+symbol = "py "
 
-[rlang]
-symbol = "ﳒ "
+[raku]
+symbol = "raku "
 
 [ruby]
-symbol = " "
+symbol = "rb "
 
 [rust]
-symbol = " "
+symbol = "rs "
 
 [scala]
-symbol = " "
+symbol = "scala "
 
 [spack]
-symbol = "🅢 "
+symbol = "spack "
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌 "
-discharging_symbol = "⚡️"
+[solidity]
+symbol = "solidity "
 
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-threshold = 10
-style = "bold red"
+[status]
+symbol = "[x](bold red) "
 
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-threshold = 30
-style = "bold yellow"
+[sudo]
+symbol = "sudo "
 
-[[battery.display]]
-threshold = 100
-style = "bold green"
+[swift]
+symbol = "swift "
+
+[terraform]
+symbol = "terraform "
+
+[zig]
+symbol = "zig "
