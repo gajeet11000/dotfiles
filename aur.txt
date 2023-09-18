@@ -1,5 +1,11 @@
-google-chrome
 visual-studio-code-bin
 mongodb-bin
 sublime-text-4
 losslesscut-bin
+protonvpn
+stacer-bin
+postman-bin
+megasync-bin
+windscribe-bin
+megabasterd-bin
+teamviewer

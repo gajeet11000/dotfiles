@@ -8,7 +8,9 @@ gimp
 otf-cascadia-code
 fish
 kvantum
+chromium
 obs-studio
+file-roller
 telegram-desktop
 okular
 cheese
