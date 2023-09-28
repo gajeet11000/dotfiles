@@ -2,7 +2,7 @@
 Comment[en_US]=
 Comment=
 Encoding=UTF-8
-Exec=google-chrome-stable https://music.youtube.com/
+Exec=brave https://music.youtube.com/
 GenericName[en_US]=
 GenericName=
 Icon=youtube-music

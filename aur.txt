@@ -3,9 +3,11 @@ mongodb-bin
 sublime-text-4
 losslesscut-bin
 protonvpn
-stacer-bin
+stacer
 postman-bin
 megasync-bin
+xdman8-bin
 windscribe-bin
 megabasterd-bin
 teamviewer
+bibata-rainbow-cursor-theme

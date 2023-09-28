@@ -11,12 +11,16 @@ kvantum
 chromium
 obs-studio
 file-roller
+thunar
+thunar-archive-plugin
+thunar-volman
 telegram-desktop
 okular
 cheese
+klipper
 mintstick
 gnome-disk-utility
-libreoffice-still
+libreoffice-fresh
 xournalpp
 deluge-gtk
 discord
