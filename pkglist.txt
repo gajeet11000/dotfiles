@@ -1,5 +1,6 @@
 yay
 vlc
+fd
 flameshot
 base-devel
 mpv

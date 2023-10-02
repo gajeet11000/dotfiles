@@ -28,8 +28,8 @@ set cb=unnamed
 set ts=4
 set sw=4
 set si
-set background=light
-colorscheme one
+set background=dark
+colorscheme gotham
 set guifont=Cascadia\ Code\ Bold\ 16
 set shell=/usr/bin/fish
 
