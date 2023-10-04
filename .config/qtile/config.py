@@ -2,7 +2,7 @@ import os
 import re
 import socket
 import subprocess
-from typing import List  # noqa: F401
+from typing import List
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import (
     Click,
@@ -17,12 +17,12 @@ from libqtile.config import (
 )
 from libqtile.command import lazy
 
-
 # mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser("~")
+storage = "/mnt/Ajeet"
 
 
 @lazy.function
@@ -39,9 +39,8 @@ def window_to_next_group(qtile):
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
 
-@lazy.function
 def minimize_all(qtile):
-    for win in qtile.current_group.windows:
+    for win in qtile.current_group.windows[:]:
         if hasattr(win, "toggle_minimize"):
             win.toggle_minimize()
 
@@ -50,23 +49,68 @@ def isNotMasterWindow(window):
     return window.info()["x"] != 8 and window.info()["y"] != 8
 
 
-@lazy.function
 def minimize_others(qtile):
-    stack = qtile.current_group.windows
-    current_win = qtile.current_window
-    for win in stack:
-        if (
-            hasattr(win, "toggle_minimize")
-            and win != current_win
-            and isNotMasterWindow(win)
-            and isNotMasterWindow(current_win)
-        ):
-            win.toggle_minimize()
+    focused_window = qtile.current_window
+
+    current_group = qtile.current_group
+    current_group_windows = current_group.windows[:]
+
+    restore_group = qtile.groups[int(current_group.name) - 1 + 5]
+    restore_group_windows = restore_group.windows[:]
+
+    if (len(current_group_windows) == 2) and isNotMasterWindow(focused_window):
+        for win in restore_group_windows:
+            win.togroup(current_group.name)
+
+    else:
+        for win in current_group_windows:
+            if (
+                win != focused_window
+                and isNotMasterWindow(win)
+                and isNotMasterWindow(focused_window)
+            ):
+                win.togroup(restore_group.name)
 
 
-@lazy.function
-def toggleMaximize(qtile):
-    qtile.current_window.toggle_maximize()
+def toggle_current_minimized_groups(qtile):
+    current_group_index = int(qtile.current_group.name) - 1
+
+    if current_group_index < 5:
+        qtile.current_screen.toggle_group(qtile.groups[current_group_index + 5])
+    else:
+        qtile.current_screen.toggle_group(qtile.groups[current_group_index - 5])
+
+
+def killall_windows(group):
+    window_list = group.windows[:]
+    for win in window_list:
+        win.kill()
+
+
+def clear_minimized_group(qtile):
+    current_group_index = int(qtile.current_group.name) - 1
+    killall_windows(qtile.groups[current_group_index + 5])
+
+def clear_current_group(qtile):
+    killall_windows(qtile.groups[int(qtile.current_group.name - 1)])
+
+
+def maximize_by_switching_layout(qtile):
+    current_layout = qtile.current_group.layout.name
+    if current_layout == "monadtall":
+        qtile.current_group.layout = "max"
+    elif current_layout == "max":
+        qtile.current_group.layout = "monadtall"
+
+
+def toggle_window_original_restore(qtile):
+    current_group_index = int(qtile.current_group.name) - 1
+    focused_window = qtile.current_window
+
+    if current_group_index < 5:
+        focused_window.togroup(qtile.groups[current_group_index + 5].name)
+    else:
+        focused_window.togroup(qtile.groups[current_group_index - 5].name)
 
 
 myTerm = "alacritty"  # My terminal of choice
@@ -74,12 +118,28 @@ myTerm = "alacritty"  # My terminal of choice
 
 keys = [
     # SUPER + FUNCTION KEYS
+    Key([mod, "mod1"], "f", lazy.function(maximize_by_switching_layout), desc="toggle maximize"),
+    Key([mod], "t", lazy.function(toggle_current_minimized_groups)),
     Key(
         [mod],
         "u",
-        minimize_others(),
+        lazy.function(minimize_others),
         desc="Minimize all except master and focused window",
     ),
+    Key(
+        [mod, "shift"],
+        "u",
+        lazy.function(clear_minimized_group),
+        lazy.function(minimize_others),
+        desc="clear group then minimize there",
+    ),
+    Key(
+        [mod],
+        "r",
+        lazy.function(toggle_window_original_restore),
+        desc="send window to restore to original and vice-versa",
+    ),
+    Key([mod], "d", lazy.function(minimize_all), desc="Toggle minimization"),
     Key(
         [mod, "shift"],
         "q",
@@ -87,16 +147,32 @@ keys = [
             "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
         ),
     ),
-    Key([mod, "mod1"], "f", toggleMaximize()),
+    Key(
+        [mod],
+        "s",
+        lazy.spawn(home + "/.config/rofi/rofi-search-home.sh"),
+    ),
+    Key(
+        [mod, "shift"],
+        "s",
+        lazy.spawn(home + "/.config/rofi/rofi-search-ajeet.sh"),
+    ),
+    Key(
+        [mod, "mod1"],
+        "g",
+        lazy.spawn("qtile cmd-obj -o layout -f maximize"),
+        desc="toggle maximize",
+    ),
     Key([mod], "c", lazy.window.kill()),
-    Key([mod], "d", minimize_all(), desc="Toggle minimization"),
-    # Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
+    #   Key([mod], "t", lazy.spawn('xterm')),
+    #   Key([mod], "v", lazy.spawn('pavucontrol')),
+    #   Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
     Key([mod], "Escape", lazy.spawn("xkill")),
-    Key([mod2, "mod1"], "d", lazy.spawn("dolphin Downloads")),
+    Key([mod2, "mod1"], "d", lazy.spawn("thunar Downloads")),
     Key([mod, "mod1"], "v", lazy.spawn(myTerm)),
     #   Key([mod], "KP_Enter", lazy.spawn('alacritty')),
     #   Key([mod], "x", lazy.shutdown()),
-    # SUPER + SHIFT KEYS
+    #   SUPER + SHIFT KEYS
     Key([mod], "e", lazy.spawn("thunar")),
     # Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#ff1493' -sb '#ff1493' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=15'")),
     #   Key([mod, "shift"], "d", lazy.spawn(home + '/.config/qtile/scripts/dmenu.sh')),
@@ -142,13 +218,9 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-    #    Key([], "XF86AudioPlay", lazy.spawn("mpc toggle")),
-    #    Key([], "XF86AudioNext", lazy.spawn("mpc next")),
-    #    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
-    #    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
     # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "space", lazy.spawn("rofi -show drun")),
+    Key([mod], "space", lazy.spawn("rofi -sort -sorting-method fzf -show drun")),
     Key(["mod1"], "tab", lazy.next_layout()),
     # CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
@@ -261,9 +333,6 @@ keys = [
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 ]
 
-groups = []
-
-# FOR QWERTY KEYBOARDS
 group_names = [
     "1",
     "2",
@@ -276,11 +345,6 @@ group_names = [
     "9",
     "0",
 ]
-
-# FOR AZERTY KEYBOARDS
-# group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
-
-# group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 group_labels = [
     "󰏃",
     "󰏃",
@@ -293,8 +357,37 @@ group_labels = [
     "󰏃",
     "󰏃",
 ]
-# group_labels = ["", "", "", "", "",]
-# group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+
+
+def init_layout_theme():
+    return {
+        "margin": 8,
+        "border_width": 2,
+        "border_focus": "#ff00ff",
+        "border_normal": "#f4c2c2",
+    }
+
+
+layout_theme = init_layout_theme()
+
+
+layouts = [
+    layout.MonadTall(
+        margin=8, border_width=4, border_focus="E0B0FF", border_normal="#000000"
+    ),
+    layout.MonadWide(
+        margin=8, border_width=4, border_focus="E0B0FF", border_normal="#000000"
+    ),
+    layout.Max(
+        margin=8, border_width=4, border_focus="E0B0FF", border_normal="#000000"
+    ),
+    layout.Zoomy(
+        margin=8, border_width=4, border_focus="E0B0FF", border_normal="#000000"
+    ),
+    layout.Bsp(
+        margin=8, border_width=4, border_focus="E0B0FF", border_normal="#000000"
+    ),
+]
 
 group_layouts = [
     "monadtall",
@@ -302,13 +395,14 @@ group_layouts = [
     "monadtall",
     "monadtall",
     "monadtall",
-    "monadtall",
-    "monadtall",
-    "monadtall",
-    "treetab",
-    "floating",
+    "bsp",
+    "bsp",
+    "bsp",
+    "bsp",
+    "bsp",
 ]
 # group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
+groups = []
 
 for i in range(len(group_names)):
     groups.append(
@@ -318,7 +412,6 @@ for i in range(len(group_names)):
             label=group_labels[i],
         )
     )
-
 for i in groups:
     keys.extend(
         [
@@ -339,46 +432,6 @@ for i in groups:
             ),
         ]
     )
-
-
-def init_layout_theme():
-    return {
-        "margin": 8,
-        "border_width": 2,
-        "border_focus": "#ff00ff",
-        "border_normal": "#f4c2c2",
-    }
-
-
-layout_theme = init_layout_theme()
-
-
-layouts = [
-    layout.MonadTall(
-        margin=8, border_width=4, border_focus="#66ff00", border_normal="#000000"
-    ),
-    layout.MonadWide(
-        margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"
-    ),
-    layout.Matrix(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme),
-    layout.Columns(**layout_theme),
-    layout.Stack(**layout_theme),
-    layout.Tile(**layout_theme),
-    layout.TreeTab(
-        sections=["FIRST", "SECOND"],
-        bg_color="#141414",
-        active_bg="#0000ff",
-        inactive_bg="#1e90ff",
-        padding_y=5,
-        section_top=10,
-        panel_width=280,
-    ),
-    layout.VerticalTile(**layout_theme),
-    layout.Zoomy(**layout_theme),
-]
 
 # ScratchPads
 groups.append(
@@ -786,7 +839,7 @@ floating_layout = layout.Floating(
         Match(wm_class="Cairo-dock"),
         Match(wm_class="cairo-dock"),
         Match(wm_class="megasync"),
-        Match(wm_class="Xdm-app"),
+        Match(wm_class="copyq"),
     ],
     fullscreen_border_width=0,
     border_width=0,
