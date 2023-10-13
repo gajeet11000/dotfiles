@@ -8,6 +8,7 @@ rofi
 gimp
 otf-cascadia-code
 fish
+fisher
 kvantum
 chromium
 obs-studio
@@ -18,15 +19,13 @@ thunar-volman
 telegram-desktop
 okular
 cheese
-klipper
 mintstick
 gnome-disk-utility
-libreoffice-fresh
+libreoffice-still
 xournalpp
 deluge-gtk
 discord
 gnome-calculator
-kclock
 nodejs
 npm
 gvim
