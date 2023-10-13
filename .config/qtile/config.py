@@ -21,7 +21,7 @@ from libqtile.command import lazy
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
-terminal = "xfce4-terminal"
+terminal = "kitty"
 home = os.path.expanduser("~")
 
 
@@ -329,20 +329,12 @@ for i in groups:
 groups.append(
     ScratchPad(
         "scratchpad",
-        [
-            DropDown(
-                "term",
-                terminal,
-                width=0.8,
-                height=0.7,
-                x=0.1,
-                y=0.1,
-                opacity=1,
-            ),
+        dropdowns=[
+            DropDown("term", terminal, width=0.8, height=0.7, x=0.1, y=0.1, opacity=1),
             DropDown(
                 "music",
-                terminal + " -e mocp",
-                width=0.90,
+                [terminal, "-e", "mocp"],
+                width=0.9,
                 height=0.5,
                 x=0.05,
                 y=0.0,
@@ -350,7 +342,7 @@ groups.append(
                 on_focus_lost_hide=False,
             ),
         ],
-    )
+    ),
 )
 
 keys.extend(
@@ -381,9 +373,6 @@ layouts = [
         margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
     ),
     layout.Max(
-        margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
-    ),
-    layout.Floating(
         margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
     ),
     layout.Zoomy(
@@ -737,8 +726,6 @@ bring_front_click = "floating_only"
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus="#E0B0FF",
-    border_normal="#000000",
     float_rules=[
         *layout.Floating.default_float_rules,
         Match(wm_class="confirm"),

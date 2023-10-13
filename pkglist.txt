@@ -1,5 +1,6 @@
 yay
 vlc
+kitty
 fd
 flameshot
 base-devel
@@ -30,7 +31,6 @@ nodejs
 npm
 gvim
 onboard
-starship
 ttf-ubuntu-font-family
 jdk17-openjdk
 cmatrix
