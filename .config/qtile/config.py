@@ -325,25 +325,28 @@ for i in groups:
         ]
     )
 
+dropdowns = [
+    DropDown("term", terminal, width=0.8, height=0.7, x=0.1, y=0.1, opacity=1),
+    DropDown(
+        "music",
+        [terminal, "-e", "mocp"],
+        width=0.9,
+        height=0.5,
+        x=0.05,
+        y=0.0,
+        opacity=1,
+        on_focus_lost_hide=False,
+    ),
+]
+
+for i in dropdowns:
+    i.floating = True
+
 # ScratchPads
 groups.append(
-    ScratchPad(
-        "scratchpad",
-        dropdowns=[
-            DropDown("term", terminal, width=0.8, height=0.7, x=0.1, y=0.1, opacity=1),
-            DropDown(
-                "music",
-                [terminal, "-e", "mocp"],
-                width=0.9,
-                height=0.5,
-                x=0.05,
-                y=0.0,
-                opacity=1,
-                on_focus_lost_hide=False,
-            ),
-        ],
-    ),
+    ScratchPad("scratchpad", dropdowns),
 )
+
 
 keys.extend(
     [
@@ -726,6 +729,10 @@ bring_front_click = "floating_only"
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
+    border_width=4,
+    border_focus="#E0B0FF",
+    border_normal="#000000",
+    fullscreen_border_width=0,
     float_rules=[
         *layout.Floating.default_float_rules,
         Match(wm_class="confirm"),
@@ -755,8 +762,6 @@ floating_layout = layout.Floating(
         Match(wm_class="megasync"),
         Match(wm_class="copyq"),
     ],
-    fullscreen_border_width=0,
-    border_width=0,
 )
 auto_fullscreen = True
 
