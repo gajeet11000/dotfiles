@@ -138,20 +138,36 @@ def resize_window(qtile, key):
 
     current_layout = qtile.current_group.layout
 
-    if is_master:
-        if key == "h":
-            current_layout.shrink()
-        elif key == "l":
-            current_layout.grow()
-    else:
-        if key == "j":
-            current_layout.grow()
-        elif key == "k":
-            current_layout.shrink()
-        elif key == "h":
-            current_layout.shrink_main()
+    if current_layout.name == "monadtall":
+        if is_master:
+            if key == "h":
+                current_layout.shrink()
+            elif key == "l":
+                current_layout.grow()
         else:
-            current_layout.grow_main()
+            if key == "j":
+                current_layout.grow()
+            elif key == "k":
+                current_layout.shrink()
+            elif key == "h":
+                current_layout.shrink_main()
+            else:
+                current_layout.grow_main()
+    elif current_layout.name == "monadwide":
+        if is_master:
+            if key == "k":
+                current_layout.shrink()
+            elif key == "j":
+                current_layout.grow()
+        else:
+            if key == "h":
+                current_layout.grow()
+            elif key == "l":
+                current_layout.shrink()
+            elif key == "j":
+                current_layout.shrink_main()
+            else:
+                current_layout.grow_main()
 
 
 ################################################################################################
@@ -269,8 +285,6 @@ keys = [
     Key([mod, mod2], "r", lazy.reload_config(), desc="Reload the config"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "c", lazy.window.kill()),
-    # FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    Key([mod, "shift"], "f", lazy.layout.flip()),
     # FLIP LAYOUT FOR BSP
     Key([mod, "mod1"], "k", lazy.layout.flip_up()),
     Key([mod, "mod1"], "j", lazy.layout.flip_down()),
