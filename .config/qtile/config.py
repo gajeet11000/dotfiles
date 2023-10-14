@@ -22,6 +22,7 @@ mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 terminal = "kitty"
+WebBrowser = "firefox"
 home = os.path.expanduser("~")
 
 
@@ -179,10 +180,10 @@ keys = [
     Key([mod], "space", lazy.spawn("rofi -sort -sorting-method fzf -show drun")),
     Key([mod2, "mod1"], "d", lazy.spawn("thunar Downloads")),
     Key([mod], "Escape", lazy.spawn("xkill")),
-    Key([mod, "mod1"], "v", lazy.spawn(terminal)),
+    Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "p", lazy.spawn("pamac-manager")),
     Key([mod], "a", lazy.spawn("thunar /mnt/Ajeet")),
-    Key([mod], "f", lazy.spawn("brave")),
+    Key([mod], "f", lazy.spawn(WebBrowser)),
     # Key([mod1, "shift"], "Escape", lazy.spawn("")),
     Key([], "Print", lazy.spawn("flameshot gui")),
     ##########################################SYSTEM##############################################
@@ -325,17 +326,27 @@ for i in groups:
         ]
     )
 
+
 dropdowns = [
-    DropDown("term", terminal, width=0.8, height=0.7, x=0.1, y=0.1, opacity=1),
+    DropDown("term", terminal, width=0.9, height=0.9, x=0.05, y=0.05, opacity=1),
+    DropDown("pamac", "pamac-manager", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1),
     DropDown(
-        "music",
-        [terminal, "-e", "mocp"],
+        "spotify",
+        ["firefox", "--new-instance", "https://open.spotify.com"],
         width=0.9,
-        height=0.5,
+        height=0.9,
         x=0.05,
-        y=0.0,
+        y=0.05,
         opacity=1,
-        on_focus_lost_hide=False,
+    ),
+    DropDown(
+        "whatsapp",
+        ["chromium", "--new-window", "https://web.whatsapp.com"],
+        width=0.9,
+        height=0.9,
+        x=0.05,
+        y=0.05,
+        opacity=1,
     ),
 ]
 
@@ -350,8 +361,10 @@ groups.append(
 
 keys.extend(
     [
-        Key([mod], "Return", lazy.group["scratchpad"].dropdown_toggle("term")),
-        Key(["mod1"], "space", lazy.group["scratchpad"].dropdown_toggle("music")),
+        Key([mod, "mod1"], "v", lazy.group["scratchpad"].dropdown_toggle("term")),
+        Key([mod, "mod1"], "p", lazy.group["scratchpad"].dropdown_toggle("whatsapp")),
+        Key(["mod1"], "space", lazy.group["scratchpad"].dropdown_toggle("spotify")),
+        Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("pamac")),
     ]
 )
 
