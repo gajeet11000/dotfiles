@@ -12,7 +12,6 @@ fish
 fisher
 kvantum
 chromium
-firefox
 obs-studio
 file-roller
 thunar

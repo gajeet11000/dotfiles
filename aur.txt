@@ -1,4 +1,5 @@
 visual-studio-code-bin
+google-chrome
 mongodb-bin
 sublime-text-4
 losslesscut-bin
@@ -8,6 +9,5 @@ postman-bin
 megasync-bin
 xdman8-bin
 windscribe-bin
-megabasterd-bin
 teamviewer
 bibata-rainbow-cursor-theme
