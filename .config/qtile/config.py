@@ -507,7 +507,7 @@ screens = [
                     fontsize=26,
                     borderwidth=3,
                     highlight_method="block",
-                    active="#CAA9E0",
+                    active="#E0B0FF",
                     block_highlight_text_color="#91B1F0",
                     highlight_color="#4B427E",
                     inactive="#282738",
@@ -533,7 +533,7 @@ screens = [
                 ),
                 widget.CurrentLayout(
                     background="#353446",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     fmt="{}",
                     font="JetBrains Bold",
                     fontsize=14,
@@ -552,7 +552,7 @@ screens = [
                 #     background="#282738",
                 #     font="JetBrains Mono Bold",
                 #     fontsize=13,
-                #     foreground="#CAA9E0",
+                #     foreground="#E0B0FF",
                 #     mouse_callbacks={"Button1": search},
                 # ),
                 # widget.Image(
@@ -565,39 +565,44 @@ screens = [
                     background="#353446",
                     format="{name}",
                     font="JetBrains Bold",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     empty_group_string="Desktop",
                     fontsize=14,
                 ),
+                # widget.Image(
+                #     filename="~/.config/qtile/Assets/Drop1.png",
+                # ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/3.png",
+                ),
+                widget.Net(
+                    font="JetBrains Bold",
+                    format="  {down:.1f}{down_suffix}    ⚫    {up:.1f}{up_suffix}  ",
+                    background="#282738",
+                    foreground="#E0B0FF",
+                    # prefix="k",
+                    fontsize=16,
+                ),
+                # widget.Image(
+                #     filename="~/.config/qtile/Assets/6.png",
+                #     background="#353446",
+                # ),
+                widget.Image(
+                    filename="~/.config/qtile/Assets/9.png",
+                    background="#E0B0FF",
+                ),
+                widget.Image(
+                    filename="~/.config/qtile/Assets/8.png",
+                    background="#E0B0FF",
                 ),
                 widget.Systray(
                     background="#282738",
                     icon_size=22,
                     padding=5,
                 ),
-                widget.TextBox(
-                    text=" ",
-                    background="#282738",
-                ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/6.png",
                     background="#353446",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/Drop1.png",
-                ),
-                widget.Net(
-                    font="JetBrains Bold",
-                    format="  {down:.1f}{down_suffix}    ⚫    {up:.1f}{up_suffix}  ",
-                    background="#353446",
-                    foreground="#CAA9E0",
-                    # prefix="k",
-                    fontsize=16,
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/2.png",
                 ),
                 # widget.Spacer(
                 #     length=8,
@@ -614,7 +619,7 @@ screens = [
                 widget.Memory(
                     background="#353446",
                     format="{MemUsed: .0f}{mm}",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     font="JetBrains Bold",
                     fontsize=16,
                     update_interval=1,
@@ -637,7 +642,7 @@ screens = [
                 widget.Battery(
                     font="JetBrains Bold",
                     background="#353446",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     format="{percent:2.0%}",
                     fontsize=16,
                 ),
@@ -662,7 +667,7 @@ screens = [
                 widget.Volume(
                     font="JetBrains Bold",
                     background="#353446",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     fontsize=16,
                 ),
                 widget.Image(
@@ -678,7 +683,7 @@ screens = [
                 widget.Clock(
                     format="%d-%m-%Y %H:%M:%S",
                     background="#282738",
-                    foreground="#CAA9E0",
+                    foreground="#E0B0FF",
                     font="JetBrains Bold",
                     fontsize=16,
                 ),
