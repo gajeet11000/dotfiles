@@ -1,3 +1,4 @@
+picom-simpleanims-git
 visual-studio-code-bin
 google-chrome
 mongodb-bin
