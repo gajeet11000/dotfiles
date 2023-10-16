@@ -55,6 +55,7 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
+run copyq &
 run volumeicon &
 run flameshot &
 #run discord &
