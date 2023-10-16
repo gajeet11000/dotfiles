@@ -31,10 +31,10 @@ function run {
 run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+# feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
+# feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
-#feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
+feh --bg-fill -z /mnt/Ajeet/PHOTOS/Wallpapers &
 #start the conky to learn the shortcuts
 #(conky -c $HOME/.config/qtile/scripts/system-overview) &
 
@@ -43,7 +43,8 @@ feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 
 
 #starting utility applications at boot time
-run variety &
+# run variety &
+run kdeconnect-indicator &
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &
@@ -56,7 +57,6 @@ picom --config $HOME/.config/picom/picom.conf &
 #starting user applications at boot time
 run volumeicon &
 run flameshot &
-run copyq &
 #run discord &
 #nitrogen --restore &
 #run caffeine -a &
