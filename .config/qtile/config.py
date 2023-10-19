@@ -170,12 +170,71 @@ def resize_window(qtile, key):
                 current_layout.grow_main()
 
 
+def custom_next_group(qtile):
+    current_group_no = int(qtile.current_group.name)
+    if current_group_no == 0:
+        qtile.current_screen.toggle_group("1")
+    else:
+        qtile.current_screen.next_group()
+
+
+def custom_prev_group(qtile):
+    current_group_no = int(qtile.current_group.name)
+    if current_group_no == 1:
+        qtile.current_screen.toggle_group("0")
+    else:
+        qtile.current_screen.prev_group()
+
+
+def is_app_not_open(qtile, group_name, wm_class):
+    group = qtile.groups_map[group_name]
+    for win in group.windows[:]:
+        if wm_class in win.get_wm_class():
+            return False
+    return True
+
+
+prev_group_save = None
+
+
+def toggle_spo_group(qtile):
+    global prev_group_save
+    current_group = qtile.current_group
+
+    if current_group.name == "spo":
+        qtile.current_screen.toggle_group(prev_group_save)
+    else:
+        qtile.current_screen.toggle_group("spo")
+        if is_app_not_open(qtile, "spo", "open.spotify.com"):
+            qtile.spawn("chromium --app=https://open.spotify.com")
+
+    if current_group.name not in ["wa", "spo"]:
+        prev_group_save = current_group.name
+
+
+def toggle_wa_group(qtile):
+    global prev_group_save
+    current_group = qtile.current_group
+
+    if current_group.name == "wa":
+        qtile.current_screen.toggle_group(prev_group_save)
+    else:
+        qtile.current_screen.toggle_group("wa")
+        if is_app_not_open(qtile, "wa", "web.whatsapp.com"):
+            qtile.spawn("chromium --app=https://web.whatsapp.com")
+
+    if current_group.name not in ["wa", "spo"]:
+        prev_group_save = current_group.name
+
+
 ################################################################################################
 ####################################SHORTCUTS KEYBINDINGS#######################################
 
 
 keys = [
     #################################CUSTOM FUNCTION########################################
+    Key([mod, "mod1"], "p", lazy.function(toggle_wa_group)),
+    Key([mod, "mod1"], "space", lazy.function(toggle_spo_group)),
     Key(
         [mod, "mod1"],
         "f",
@@ -220,6 +279,16 @@ keys = [
         [mod, "shift"],
         "s",
         lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-search-storage.sh"),
+    ),
+    Key(
+        ["mod1"],
+        "space",
+        lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-web-search.sh"),
+    ),
+    Key(
+        [mod, "mod1"],
+        "b",
+        lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-set-bg.sh"),
     ),
     #########################################APPLICATIONS#######################################
     Key([mod], "e", lazy.spawn("thunar")),
@@ -302,6 +371,10 @@ keys = [
     Key([mod, "shift"], "Right", lazy.layout.swap_right()),
     # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    # TOGGLE NEXT AND PREVIOUS WORKSPACE
+    Key([mod], "comma", lazy.function(custom_prev_group)),
+    Key([mod], "period", lazy.function(custom_next_group)),
+    # TOGGLE HIDDEN WORKSPACES
 ]
 #####################################SETTING UP GROUPS###################################
 
@@ -348,9 +421,6 @@ for i in groups:
         [
             # CHANGE WORKSPACES
             Key([mod], i.name, lazy.group[i.name].toscreen()),
-            Key([mod], "comma", lazy.screen.prev_group()),
-            Key([mod], "period", lazy.screen.next_group()),
-            # Key([mod1, "shift"], "Tab", lazy.screen.prev_group()),
             Key(
                 [mod, "shift"],
                 i.name,
@@ -360,30 +430,45 @@ for i in groups:
         ]
     )
 
+hidden_groups = [
+    Group(
+        name="spo",
+        layout="monadtall".lower(),
+        label="",
+    ),
+    Group(
+        name="wa",
+        layout="monadtall".lower(),
+        label="",
+    ),
+]
+
+for i in hidden_groups:
+    groups.append(i)
 
 dropdowns = [
     DropDown("term", terminal, width=0.9, height=0.9, x=0.05, y=0.05, opacity=1),
     DropDown(
         "pamac", "pamac-manager", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1
     ),
-    DropDown(
-        "spotify",
-        ["chromium", "--app=https://open.spotify.com"],
-        width=0.9,
-        height=0.9,
-        x=0.05,
-        y=0.05,
-        opacity=1,
-    ),
-    DropDown(
-        "whatsapp",
-        [WebBrowser, "--app=https://web.whatsapp.com"],
-        width=0.9,
-        height=0.9,
-        x=0.05,
-        y=0.05,
-        opacity=1,
-    ),
+    # DropDown(
+    #     "spotify",
+    #     ["chromium", "--app=https://open.spotify.com"],
+    #     width=0.9,
+    #     height=0.9,
+    #     x=0.05,
+    #     y=0.05,
+    #     opacity=1,
+    # ),
+    # DropDown(
+    #     "whatsapp",
+    #     [WebBrowser, "--app=https://web.whatsapp.com"],
+    #     width=0.9,
+    #     height=0.9,
+    #     x=0.05,
+    #     y=0.05,
+    #     opacity=1,
+    # ),
 ]
 
 for i in dropdowns:
@@ -398,8 +483,8 @@ groups.append(
 keys.extend(
     [
         Key([mod, "mod1"], "v", lazy.group["scratchpad"].dropdown_toggle("term")),
-        Key([mod, "mod1"], "p", lazy.group["scratchpad"].dropdown_toggle("whatsapp")),
-        Key(["mod1"], "space", lazy.group["scratchpad"].dropdown_toggle("spotify")),
+        # Key([mod, "mod1"], "p", lazy.group["scratchpad"].dropdown_toggle("whatsapp")),
+        # Key(["mod1"], "space", lazy.group["scratchpad"].dropdown_toggle("spotify")),
         Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("pamac")),
     ]
 )
