@@ -801,6 +801,9 @@ mouse = [
     Drag(
         [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
     ),
+    Drag(
+        [mod], "Button1", lazy.window.set_position(), start=lazy.window.get_position()
+    ),
 ]
 
 dgroups_key_binder = None
