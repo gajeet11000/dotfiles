@@ -42,6 +42,8 @@ main() {
     engine=$(printf '%s\n' "${!websearch[@]}" | sort | ${MENU} 'Choose search engine:') || exit 1
     url="${websearch["${engine}"]}"
     prompt="Search ${engine}"
+    MENU="${MENU:0:34} -theme ./themes/fullInputWidth ${MENU:34}"
+    echo $MENU
     query=$(${MENU} "${prompt}")
     query="$(echo -n "${query}" | jq -s -R -r @uri)"
     if [ -z "$query" ]; then
@@ -50,5 +52,5 @@ main() {
     google-chrome-stable "${url}${query}"
 }
 
-MENU="rofi -sort -sorting-method fzf -dmenu -p"
+MENU="rofi -no-show-icons -sort -sorting-method fzf -i -dmenu -p "
 [[ "${BASH_SOURCE[0]}" == "${0}" ]] && main

@@ -47,5 +47,5 @@ main() {
     esac
 }
 
-MENU="rofi -sort -sorting-method fzf -dmenu -p"
+MENU="rofi -sort -sorting-method fzf -i -dmenu -p"
 [[ "${BASH_SOURCE[0]}" == "${0}" ]] && main

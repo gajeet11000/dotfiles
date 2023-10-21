@@ -227,12 +227,20 @@ def toggle_wa_group(qtile):
         prev_group_save = current_group.name
 
 
+def float_to_front(qtile):
+    for group in qtile.groups:
+        for window in group.windows:
+            if window.floating:
+                window.bring_to_front()
+
+
 ################################################################################################
 ####################################SHORTCUTS KEYBINDINGS#######################################
 
 
 keys = [
     #################################CUSTOM FUNCTION########################################
+    Key([mod, "shift"], "f", lazy.function(float_to_front)),
     Key([mod, "mod1"], "p", lazy.function(toggle_wa_group)),
     Key([mod, "mod1"], "space", lazy.function(toggle_spo_group)),
     Key(
@@ -516,6 +524,9 @@ layouts = [
         margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
     ),
     layout.Bsp(
+        margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
+    ),
+    layout.Floating(
         margin=8, border_width=4, border_focus="#E0B0FF", border_normal="#000000"
     ),
 ]
