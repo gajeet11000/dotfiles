@@ -171,19 +171,52 @@ def resize_window(qtile, key):
 
 
 def custom_next_group(qtile):
-    current_group_no = int(qtile.current_group.name)
-    if current_group_no == 0:
-        qtile.current_screen.toggle_group("1")
-    else:
-        qtile.current_screen.next_group()
+    current_group_index = int(qtile.current_group.name) - 1
+    i = current_group_index + 1
+
+    # if its -1 then it means it's acutal index is 9
+    if current_group_index == -1:
+        current_group_index = 9
+        # so the next index starts from 0
+        i = 0
+
+    total_groups = 10
+    while i != current_group_index:
+        if i < total_groups:
+            if len(qtile.groups[i].windows[:]) != 0:
+                if i == 9:
+                    qtile.current_screen.toggle_group("0")
+                else:
+                    qtile.current_screen.toggle_group(str(i + 1))
+                break
+            i += 1
+        else:
+            i = 0
 
 
 def custom_prev_group(qtile):
-    current_group_no = int(qtile.current_group.name)
-    if current_group_no == 1:
-        qtile.current_screen.toggle_group("0")
-    else:
-        qtile.current_screen.prev_group()
+    current_group_index = int(qtile.current_group.name) - 1
+
+    # previous group index
+    i = current_group_index - 1
+
+    # if its -1 then it means it's acutal index is 9
+    if current_group_index == -1:
+        current_group_index = 9
+        # so the previous index is 8
+        i = 8
+
+    while i != current_group_index:
+        if i >= 0:
+            if len(qtile.groups[i].windows[:]) != 0:
+                if i == 9:
+                    qtile.current_screen.toggle_group("0")
+                else:
+                    qtile.current_screen.toggle_group(str(i + 1))
+                break
+            i -= 1
+        else:
+            i = 9
 
 
 def is_app_not_open(qtile, group_name, wm_class):
