@@ -907,6 +907,15 @@ def set_floating(window):
         window.floating = True
 
 
+@hook.subscribe.client_killed
+def check_windows_in_max_mode(window):
+    no_of_windows = len(qtile.current_group.windows[:])
+    layout_name = qtile.current_layout.name
+
+    if layout_name == "max" or no_of_windows < 2:
+        maximize_by_switching_layout(qtile)
+
+
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
 
