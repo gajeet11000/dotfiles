@@ -223,6 +223,22 @@ def custom_prev_group(qtile):
             i = 9
 
 
+def regular_custom_next_group(qtile):
+    current_group_no = int(qtile.current_group.name)
+    if current_group_no == 0:
+        qtile.current_screen.toggle_group("1")
+    else:
+        qtile.current_screen.next_group()
+
+
+def regular_custom_prev_group(qtile):
+    current_group_no = int(qtile.current_group.name)
+    if current_group_no == 1:
+        qtile.current_screen.toggle_group("0")
+    else:
+        qtile.current_screen.prev_group()
+
+
 def is_app_not_open(qtile, group_name, wm_class):
     group = qtile.groups_map[group_name]
     for win in group.windows[:]:
@@ -269,6 +285,13 @@ def float_to_front(qtile):
         for window in group.windows:
             if window.floating:
                 window.bring_to_front()
+
+
+def switch_max_to_monadtall(qtile):
+    layout_name = qtile.current_layout.name
+
+    if layout_name == "max":
+        qtile.current_group.layout = "monadtall"
 
 
 ################################################################################################
@@ -419,6 +442,8 @@ keys = [
     # TOGGLE NEXT AND PREVIOUS WORKSPACE
     Key([mod], "comma", lazy.function(custom_prev_group)),
     Key([mod], "period", lazy.function(custom_next_group)),
+    Key([mod, "shift"], "comma", lazy.function(regular_custom_prev_group)),
+    Key([mod, "shift"], "period", lazy.function(regular_custom_next_group)),
     # TOGGLE HIDDEN WORKSPACES
 ]
 #####################################SETTING UP GROUPS###################################
@@ -909,14 +934,12 @@ def set_floating(window):
         or window.window.get_wm_type() in floating_types
     ):
         window.floating = True
+    switch_max_to_monadtall(qtile)
 
 
 @hook.subscribe.client_killed
 def check_windows_in_max_mode(window):
-    layout_name = qtile.current_layout.name
-
-    if layout_name == "max":
-        qtile.current_group.layout = "monadtall"
+    switch_max_to_monadtall(qtile)
 
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
