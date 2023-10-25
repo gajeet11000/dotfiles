@@ -108,10 +108,14 @@ def clear_current_group(qtile):
 
 def maximize_by_switching_layout(qtile):
     current_layout = qtile.current_group.layout.name
-    if current_layout == "monadtall":
-        qtile.current_group.layout = "max"
-    elif current_layout == "max":
-        qtile.current_group.layout = "monadtall"
+
+    no_of_windows = len(qtile.current_group.windows[:])
+
+    if no_of_windows > 1:
+        if current_layout == "monadtall":
+            qtile.current_group.layout = "max"
+        elif current_layout == "max":
+            qtile.current_group.layout = "monadtall"
 
 
 def toggle_window_original_restore(qtile):
@@ -909,11 +913,10 @@ def set_floating(window):
 
 @hook.subscribe.client_killed
 def check_windows_in_max_mode(window):
-    no_of_windows = len(qtile.current_group.windows[:])
     layout_name = qtile.current_layout.name
 
-    if layout_name == "max" or no_of_windows < 2:
-        maximize_by_switching_layout(qtile)
+    if layout_name == "max":
+        qtile.current_group.layout = "monadtall"
 
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
