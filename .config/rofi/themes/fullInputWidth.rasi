@@ -40,15 +40,13 @@
 #listview {
     layout: horizontal;
     lines: 100;
-    spacing: 7;
 }
 #entry {
     padding: 2px;
     expand: false;
-    width: 10em;
+    width: 85em;
 }
 #element {
-    border-radius: 10;
     padding: 2px 8px;
 }
 element selected.normal {
