@@ -1,3 +1,4 @@
+brightnessctl
 copyq
 yay
 vlc
