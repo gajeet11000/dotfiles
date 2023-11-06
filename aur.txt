@@ -3,7 +3,6 @@ visual-studio-code-bin
 google-chrome
 mongodb-bin
 sublime-text-4
-losslesscut-bin
 protonvpn
 stacer
 postman-bin

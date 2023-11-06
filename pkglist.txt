@@ -24,7 +24,6 @@ thunar-volman
 telegram-desktop
 okular
 cheese
-mintstick
 gnome-disk-utility
 libreoffice-still
 xournalpp
