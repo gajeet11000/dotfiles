@@ -46,3 +46,4 @@ htop
 xwallpaper
 imv
 sxiv
+lxappearance
