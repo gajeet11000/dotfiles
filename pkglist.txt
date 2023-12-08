@@ -2,6 +2,7 @@ network-manager-applet
 brightnessctl
 copyq
 yay
+alsa-utils
 vlc
 kitty
 fd
