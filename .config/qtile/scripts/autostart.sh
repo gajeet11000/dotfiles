@@ -44,6 +44,9 @@ feh --bg-fill -z /mnt/Ajeet/PHOTOS/Wallpapers &
 
 #starting utility applications at boot time
 # run variety &
+if [[ ! `pidof xfce-polkit` ]]; then
+	/usr/lib/xfce-polkit/xfce-polkit &
+fi
 run kdeconnect-indicator &
 run nm-applet &
 run pamac-tray &
