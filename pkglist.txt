@@ -32,7 +32,6 @@ discord
 gnome-calculator
 nodejs
 npm
-gvim
 onboard
 ttf-ubuntu-font-family
 jdk17-openjdk
