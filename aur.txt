@@ -7,7 +7,7 @@ protonvpn
 stacer
 postman-bin
 megasync-bin
-xdman8-bin
 windscribe-bin
+catppuccin-gtk-theme-mocha
 teamviewer
 bibata-rainbow-cursor-theme
