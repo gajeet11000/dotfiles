@@ -1,4 +1,5 @@
 network-manager-applet
+kdeconnect
 brightnessctl
 copyq
 yay
