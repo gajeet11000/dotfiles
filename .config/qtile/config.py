@@ -364,7 +364,7 @@ keys = [
     Key([mod2, "mod1"], "d", lazy.spawn("thunar Downloads")),
     Key([mod], "Escape", lazy.spawn("xkill")),
     Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "p", lazy.spawn("pamac-manager")),
+    Key([mod], "p", lazy.spawn("/usr/bin/octopi")),
     Key([mod], "a", lazy.spawn("thunar /mnt/Storage")),
     Key([mod], "f", lazy.spawn(WebBrowser)),
     # Key([mod1, "shift"], "Escape", lazy.spawn("")),
