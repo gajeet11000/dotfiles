@@ -1,8 +1,6 @@
-network-manager-applet
 kdeconnect
 brightnessctl
 copyq
-yay
 alsa-utils
 vlc
 kitty
@@ -49,3 +47,17 @@ xwallpaper
 imv
 sxiv
 lxappearance
+dosfstools
+gnome-keyring
+xorg-xinput
+ntfs-3g
+partitionmanager
+networkmanager
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp 
+networkmanager-strongswan
+networkmanager-vpnc
+network-manager-sstp
+nm-connection-editor
+network-manager-applet
