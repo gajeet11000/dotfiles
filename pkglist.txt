@@ -1,4 +1,7 @@
 kdeconnect
+ttf-firacode-nerd
+ttf-font-awesome
+awesome-terminal-fonts
 brightnessctl
 copyq
 alsa-utils
