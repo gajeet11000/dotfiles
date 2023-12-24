@@ -341,12 +341,12 @@ keys = [
     Key(
         [mod],
         "s",
-        lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-search-home.sh"),
+        lazy.spawn("rofi -show Home -config " + home + "/.config/rofi/themes/search-config.rasi"),
     ),
     Key(
         [mod, "shift"],
         "s",
-        lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-search-storage.sh"),
+        lazy.spawn("rofi -show Home -config " + home + "/.config/rofi/themes/open-terminal-config.rasi"),
     ),
     Key(
         ["mod1"],
