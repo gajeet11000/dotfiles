@@ -1,19 +1,15 @@
 configuration
 {
-	modi: "drun,run,window";
+	modi: "Home:~/.config/rofi/scripts/terminal-home.sh, Storage:~/.config/rofi/scripts/terminal-storage.sh, Root:~/.config/rofi/scripts/terminal-root.sh";
 	font: "Comic Sans MS Bold 14";
 	show-icons: true;
 	icon-theme: "candy-icons";
-	drun-display-format: "{name}";
-	display-drun: "Run ▶ ";
 	matching: "normal";
-	drun-match-fields: "name, generic, exec, categories";
-	hover-select: true;
 	sort: true;
 	sorting-method: "fzf";
 	case-sensitive: false;
+	hover-select: false;
 	me-select-entry: "";
 	me-accept-entry: [ MousePrimary ];
-
 }
-@theme "/home/gajeet/.config/rofi/themes/aj-dmenu.rasi"
+@theme "~/.config/rofi/themes/search.rasi"
