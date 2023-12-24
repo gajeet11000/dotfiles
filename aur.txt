@@ -1,5 +1,7 @@
 picom-simpleanims-git
 visual-studio-code-bin
+plymouth
+octopi
 google-chrome
 mongodb-bin
 sublime-text-4
