@@ -34,7 +34,7 @@ run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 # feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
 # feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
-feh --bg-fill -z /mnt/Ajeet/PHOTOS/Wallpapers &
+feh --bg-fill -z /mnt/Storage/PHOTOS/Wallpapers &
 #start the conky to learn the shortcuts
 #(conky -c $HOME/.config/qtile/scripts/system-overview) &
 
