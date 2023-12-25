@@ -341,12 +341,20 @@ keys = [
     Key(
         [mod],
         "s",
-        lazy.spawn("rofi -show Home -config " + home + "/.config/rofi/themes/search-config.rasi"),
+        lazy.spawn(
+            "rofi -show Home -config "
+            + home
+            + "/.config/rofi/themes/search-config.rasi"
+        ),
     ),
     Key(
         [mod, "shift"],
         "s",
-        lazy.spawn("rofi -show Home -config " + home + "/.config/rofi/themes/open-terminal-config.rasi"),
+        lazy.spawn(
+            "rofi -show Home -config "
+            + home
+            + "/.config/rofi/themes/open-terminal-config.rasi"
+        ),
     ),
     Key(
         ["mod1"],
@@ -364,7 +372,7 @@ keys = [
     Key([mod2, "mod1"], "d", lazy.spawn("thunar Downloads")),
     Key([mod], "Escape", lazy.spawn("xkill")),
     Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "p", lazy.spawn("/usr/bin/octopi")),
+    # Key([mod], "p", lazy.spawn("/usr/bin/octopi")),
     Key([mod], "a", lazy.spawn("thunar /mnt/Storage")),
     Key([mod], "f", lazy.spawn(WebBrowser)),
     # Key([mod1, "shift"], "Escape", lazy.spawn("")),
@@ -519,7 +527,7 @@ for i in hidden_groups:
 dropdowns = [
     DropDown("term", terminal, width=0.9, height=0.9, x=0.05, y=0.05, opacity=1),
     DropDown(
-        "pamac", "pamac-manager", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1
+        "octopi", "/usr/bin/octopi", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1
     ),
     # DropDown(
     #     "spotify",
@@ -555,7 +563,7 @@ keys.extend(
         Key([mod, "mod1"], "v", lazy.group["scratchpad"].dropdown_toggle("term")),
         # Key([mod, "mod1"], "p", lazy.group["scratchpad"].dropdown_toggle("whatsapp")),
         # Key(["mod1"], "space", lazy.group["scratchpad"].dropdown_toggle("spotify")),
-        Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("pamac")),
+        Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("octopi")),
     ]
 )
 
