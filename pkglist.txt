@@ -8,6 +8,7 @@ alsa-utils
 vlc
 feh
 blueberry
+numlockx
 python-dbus-next
 kitty
 fd
