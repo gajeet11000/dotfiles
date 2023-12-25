@@ -6,6 +6,7 @@ brightnessctl
 copyq
 alsa-utils
 vlc
+python-dbus-next
 kitty
 fd
 flameshot
