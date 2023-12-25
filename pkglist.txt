@@ -6,6 +6,8 @@ brightnessctl
 copyq
 alsa-utils
 vlc
+feh
+blueberry
 python-dbus-next
 kitty
 fd
