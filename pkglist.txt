@@ -1,3 +1,4 @@
+jq
 kdeconnect
 ttf-firacode-nerd
 ttf-font-awesome
