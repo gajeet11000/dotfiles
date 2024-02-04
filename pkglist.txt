@@ -54,7 +54,6 @@ htop
 xwallpaper
 imv
 sxiv
-lxappearance
 dosfstools
 gnome-keyring
 xorg-xinput
@@ -63,7 +62,6 @@ partitionmanager
 networkmanager
 networkmanager-openconnect
 networkmanager-openvpn
-networkmanager-pptp 
 networkmanager-strongswan
 networkmanager-vpnc
 network-manager-sstp
