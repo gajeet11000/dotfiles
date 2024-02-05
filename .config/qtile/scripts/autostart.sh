@@ -20,13 +20,16 @@ function run {
 # feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
 
-# Check if an argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <directory>"
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <argument1> <argument2>"
     exit 1
 fi
 
+
 wallpapers_path="${1}"
+lockscreen_wallpapers_path="${2}"
+
+betterlockscreen -u "$lockscreen_wallpapers_path" &
 
 # Run feh command with modified path
 feh --bg-fill -z "$wallpapers_path" &

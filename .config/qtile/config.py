@@ -917,7 +917,7 @@ main = None
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser("~")
-    subprocess.call([home + "/.config/qtile/scripts/autostart.sh", wallpapers_path])
+    subprocess.call([home + "/.config/qtile/scripts/autostart.sh", wallpapers_path, lockscreen_wallpaper_path])
 
 
 @hook.subscribe.startup
