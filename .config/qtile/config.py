@@ -1,6 +1,4 @@
 import os
-import re
-import socket
 import subprocess
 from typing import List
 from libqtile import layout, bar, widget, hook, qtile
@@ -17,14 +15,7 @@ from libqtile.config import (
 )
 from libqtile.command import lazy
 
-# mod4 or mod = super key
-mod = "mod4"
-mod1 = "alt"
-mod2 = "control"
-terminal = "kitty"
-WebBrowser = "google-chrome-stable"
-home = os.path.expanduser("~")
-
+from user_variables import *
 
 ########################CUSTOM FUNCTIONS#################################
 
@@ -335,7 +326,7 @@ keys = [
         [mod, "shift"],
         "q",
         lazy.spawn(
-            "rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu.sh"
+            home + "/.config/rofi/scripts/rofi-powermenu.sh"
         ),
     ),
     Key(
@@ -367,13 +358,13 @@ keys = [
         lazy.spawn("bash " + home + "/.config/rofi/scripts/rofi-set-bg.sh"),
     ),
     #########################################APPLICATIONS#######################################
-    Key([mod], "e", lazy.spawn("thunar")),
+    Key([mod], "e", lazy.spawn(file_manager)),
     Key([mod], "space", lazy.spawn("rofi -sort -sorting-method fzf -show drun")),
-    Key([mod2, "mod1"], "d", lazy.spawn("thunar Downloads")),
+    Key([mod2, "mod1"], "d", lazy.spawn(file_manager + " Downloads")),
     Key([mod], "Escape", lazy.spawn("xkill")),
     Key([mod], "Return", lazy.spawn(terminal)),
     # Key([mod], "p", lazy.spawn("/usr/bin/octopi")),
-    Key([mod], "a", lazy.spawn("thunar /mnt/Storage")),
+    Key([mod], "a", lazy.spawn(file_manager + " /mnt/" + storage_drive)),
     Key([mod], "f", lazy.spawn(WebBrowser)),
     # Key([mod1, "shift"], "Escape", lazy.spawn("")),
     Key([], "Print", lazy.spawn("flameshot gui")),
@@ -669,8 +660,8 @@ screens = [
                 #     filename="~/.config/qtile/Assets/6.png",
                 # ),
                 widget.GroupBox(
-                    font="FontAwesome",
-                    fontsize=26,
+                    font="FontAwesome Regular",
+                    fontsize=24,
                     borderwidth=3,
                     highlight_method="block",
                     active="#E0B0FF",
@@ -743,7 +734,7 @@ screens = [
                 ),
                 widget.Net(
                     font="JetBrains Bold",
-                    format="  {down:.1f}{down_suffix}    ⚫    {up:.1f}{up_suffix}  ",
+                    format="  {down:.1f}{down_suffix}        {up:.1f}{up_suffix}  ",
                     background="#282738",
                     foreground="#E0B0FF",
                     # prefix="k",
@@ -926,7 +917,7 @@ main = None
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser("~")
-    subprocess.call([home + "/.config/qtile/scripts/autostart.sh"])
+    subprocess.call([home + "/.config/qtile/scripts/autostart.sh", wallpapers_path])
 
 
 @hook.subscribe.startup
@@ -977,6 +968,8 @@ floating_layout = layout.Floating(
         Match(wm_class="maketag"),
         Match(wm_class="Arandr"),
         Match(wm_class="feh"),
+        Match(wm_class="blueman-manager"),
+        Match(wm_class="gnome-calculator"),
         Match(wm_class="Galculator"),
         Match(title="branchdialog"),
         Match(title="Open File"),

@@ -19,7 +19,17 @@ function run {
 # feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
 # feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
-feh --bg-fill -z /mnt/Storage/PHOTOS/Wallpapers &
+
+# Check if an argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+wallpapers_path="${1}"
+
+# Run feh command with modified path
+feh --bg-fill -z "$wallpapers_path" &
 
 if [[ ! `pidof xfce-polkit` ]]; then
 	/usr/lib/xfce-polkit/xfce-polkit &
