@@ -966,6 +966,7 @@ floating_layout = layout.Floating(
         Match(wm_class="confirmreset"),
         Match(wm_class="makebranch"),
         Match(wm_class="maketag"),
+        Match(wm_class="protonvpn"),
         Match(wm_class="Arandr"),
         Match(wm_class="feh"),
         Match(wm_class="blueman-manager"),
