@@ -8,7 +8,6 @@ copyq
 alsa-utils
 vlc
 feh
-blueberry
 numlockx
 python-dbus-next
 kitty
@@ -25,7 +24,9 @@ fisher
 kvantum
 chromium
 obs-studio
+gwenview
 file-roller
+volumeicon
 thunar
 thunar-archive-plugin
 thunar-volman

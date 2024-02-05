@@ -1,15 +1,12 @@
 picom-simpleanims-git
 visual-studio-code-bin
-plymouth
-octopi
 google-chrome
 mongodb-bin
 sublime-text-4
 protonvpn
-stacer
+stacer-bin
 postman-bin
 megasync-bin
-windscribe-bin
 catppuccin-gtk-theme-mocha
 teamviewer
 bibata-rainbow-cursor-theme
