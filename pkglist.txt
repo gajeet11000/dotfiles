@@ -25,7 +25,6 @@ kvantum
 chromium
 obs-studio
 gwenview
-file-roller
 volumeicon
 thunar
 thunar-archive-plugin
