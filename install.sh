@@ -6,6 +6,8 @@ sudo pacman --needed --noconfirm -S - < pkglist.txt
 
 yay --needed --noconfirm -S - < aur.txt
 
+sudo pacman -R gvfs-smb
+
 chsh -s /bin/fish
 sudo chsh -s /bin/fish
 
