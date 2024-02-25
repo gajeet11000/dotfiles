@@ -975,6 +975,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),
         Match(title="Open File"),
         Match(title="pinentry"),
+        Match(title="Bitwarden"),
         Match(wm_class="ssh-askpass"),
         Match(wm_class="lxpolkit"),
         Match(wm_class="Lxpolkit"),
