@@ -326,7 +326,8 @@ keys = [
         [mod, "shift"],
         "q",
         lazy.spawn(
-            home + "/.config/rofi/scripts/rofi-powermenu.sh"
+            "rofi -show power-menu -modi power-menu:"
+            + home + "/.config/rofi/scripts/rofi-powermenu.sh"
         ),
     ),
     Key(
