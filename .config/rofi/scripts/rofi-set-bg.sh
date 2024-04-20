@@ -1,4 +1,4 @@
-setbg_dir="/mnt/Ajeet/PHOTOS/Wallpapers"
+setbg_dir="/mnt/Storage/PHOTOS/Wallpapers"
 use_imv=0
 # Set wallpaper using either xwallpaper or swaybf
 setbg() {
