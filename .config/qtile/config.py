@@ -250,7 +250,7 @@ def toggle_spo_group(qtile):
     else:
         qtile.current_screen.toggle_group("spo")
         if is_app_not_open(qtile, "spo", "open.spotify.com"):
-            qtile.spawn("chromium --app=https://open.spotify.com")
+            qtile.spawn("brave --app=https://open.spotify.com")
 
     if current_group.name not in ["wa", "spo"]:
         prev_group_save = current_group.name
@@ -265,7 +265,7 @@ def toggle_wa_group(qtile):
     else:
         qtile.current_screen.toggle_group("wa")
         if is_app_not_open(qtile, "wa", "web.whatsapp.com"):
-            qtile.spawn("chromium --app=https://web.whatsapp.com")
+            qtile.spawn("brave --app=https://web.whatsapp.com")
 
     if current_group.name not in ["wa", "spo"]:
         prev_group_save = current_group.name
@@ -327,7 +327,7 @@ keys = [
         "q",
         lazy.spawn(
             "rofi -show power-menu -modi power-menu:"
-            + home + "/.config/rofi/scripts/rofi-powermenu.sh"
+            + home + "/.config/rofi/scripts/rofi-power-menu.sh"
         ),
     ),
     Key(
