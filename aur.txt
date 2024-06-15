@@ -1,12 +1,12 @@
 picom-simpleanims-git
 visual-studio-code-bin
 google-chrome
-mongodb-bin
 sublime-text-4
 protonvpn
 stacer-bin
 postman-bin
 megasync-bin
 catppuccin-gtk-theme-mocha
-teamviewer
 bibata-rainbow-cursor-theme
+anydesk-bin
+video-downloader
