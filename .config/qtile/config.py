@@ -13,7 +13,7 @@ from libqtile.config import (
     ScratchPad,
     DropDown,
 )
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 
 from user_variables import *
 

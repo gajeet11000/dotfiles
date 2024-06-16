@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=VS Code (Rofi)
 Comment=Visual Studio Code with Rofi workspace selection
-Exec=/home/gajeet/.config/rofi/scripts/rofi-vscode-workspace.sh
+Exec=/home/$USER/.config/rofi/scripts/rofi-vscode-workspace.sh
 Icon=code
 Type=Application
 Terminal=false
