@@ -10,3 +10,4 @@ catppuccin-gtk-theme-mocha
 bibata-rainbow-cursor-theme
 anydesk-bin
 video-downloader
+koodo-reader-bin
