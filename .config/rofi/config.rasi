@@ -16,4 +16,4 @@ configuration
 	me-accept-entry: [ MousePrimary ];
 
 }
-@theme "/home/gajeet/.config/rofi/themes/aj-dmenu.rasi"
+@theme "~/.config/rofi/themes/aj-dmenu.rasi"
