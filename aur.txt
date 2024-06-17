@@ -13,3 +13,5 @@ video-downloader
 koodo-reader-bin
 p7zip-gui
 xdman-beta-bin
+qpdfview
+masterpdfeditor-free
