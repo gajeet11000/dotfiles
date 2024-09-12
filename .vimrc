@@ -5,22 +5,15 @@ source $VIMRUNTIME/defaults.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" List your plugins here
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'vim-airline/vim-airline'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
 filetype plugin indent on    " required
-
 
 set hls
 set is
@@ -28,10 +21,9 @@ set cb=unnamed
 set ts=4
 set sw=4
 set si
-set background=dark
-colorscheme gotham
 set guifont=Cascadia\ Code\ Bold\ 16
 set shell=/usr/bin/fish
+let g:airline_theme = 'catppuccin_mocha'
 
 nnoremap <C-A> ggVG
 inoremap { {}<Left>
